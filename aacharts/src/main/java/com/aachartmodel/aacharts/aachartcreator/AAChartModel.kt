@@ -89,6 +89,30 @@ enum class AAChartType(val value: String) {
     Polygon("polygon"),
     Gauge("gauge"),
     Errorbar("errorbar"),
+
+    Sankey("sankey"),
+    Variablepie("variablepie"),
+    Treemap("treemap"),
+    Variwide("variwide"),
+    Sunburst("sunburst"),
+    Dependencywheel("dependencywheel"),
+    Heatmap("heatmap"),
+    Packedbubble("packedbubble"),
+    Venn("venn"),
+    Dumbbell("dumbbell"),
+    Lollipop("lollipop"),
+    Streamgraph("streamgraph"),
+    Columnpyramid("columnpyramid"),
+    Xrange("xrange"),
+
+    Tilemap("tilemap"),
+    Vector("vector"),
+    Bellcurve("bellcurve"),
+    Timeline("timeline"),
+    Item("item"),
+    Windbarb("windbarb"),
+    Networkgraph("networkgraph"),
+    Wordcloud("wordcloud"),
 }
 
 enum class AAChartZoomType(val value: String) {
