@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
                 "windbarbChart---风羽图",
                 "networkgraphChart---力导关系图✢✣✤✥",
                 "wordcloudChart---词云️图☁️",
-                "eulerChart---欧拉图")
+                "eulerChart---欧拉图"
+        )
 
         val mChartTypesRecyclerViewAdapter = ChartTypesRecyclerViewAdapter(chartTypesArr)
         mChartTypesRecyclerViewAdapter.setItemOnClickListener(object : OnItemClickListener {
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val chartTypesRecyclerView: RecyclerView = findViewById<RecyclerView>(R.id.chart_types_recycle_view)
+        val chartTypesRecyclerView: RecyclerView = findViewById(R.id.chart_types_recycle_view)
         chartTypesRecyclerView.adapter = mChartTypesRecyclerViewAdapter
         chartTypesRecyclerView.layoutManager = LinearLayoutManager(this)
     }
