@@ -4,14 +4,19 @@ import android.app.Application
 import android.content.Context
 
 
-class BaseApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        context = applicationContext
+class BaseApplication:Application(){
+    companion object {
+        var  _context:Application? = null
+        fun getContext():Context{
+            return _context!!
+        }
+
     }
 
-    companion object {
-        var context: Context? = null
-            private set
+    override fun onCreate() {
+        super.onCreate()
+        _context = this
     }
+
+
 }

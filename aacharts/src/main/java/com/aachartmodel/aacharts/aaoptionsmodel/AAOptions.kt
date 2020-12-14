@@ -8,6 +8,7 @@
  */
 package com.github.aachartmodel.aainfographics.aaoptionsmodel
 
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AAColorAxis
 import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
 
 class AAOptions {
@@ -20,12 +21,14 @@ class AAOptions {
     var yAxisArray: Array<AAYAxis>? = null
     var tooltip: AATooltip? = null
     var plotOptions: AAPlotOptions? = null
-    var series: Array<AASeriesElement>? = null
+    var series: Array<Any>? = null
     var legend: AALegend? = null
     var pane: AAPane? = null
     var colors: Array<Any>? = null
     var defaultOptions: AALang? = null
     var touchEventEnabled: Boolean? = null
+
+    var colorAxis: AAColorAxis? = null
 
     fun chart(prop: AAChart): AAOptions {
         chart = prop
@@ -72,7 +75,7 @@ class AAOptions {
         return this
     }
 
-    fun series(prop: Array<AASeriesElement>?): AAOptions {
+    fun series(prop: Array<Any>): AAOptions {
         series = prop
         return this
     }
@@ -99,6 +102,12 @@ class AAOptions {
 
     fun touchEventEnabled(prop: Boolean?): AAOptions {
         touchEventEnabled = prop
+        return this
+    }
+
+
+    fun colorAxis(prop: AAColorAxis): AAOptions {
+        colorAxis = prop
         return this
     }
 }

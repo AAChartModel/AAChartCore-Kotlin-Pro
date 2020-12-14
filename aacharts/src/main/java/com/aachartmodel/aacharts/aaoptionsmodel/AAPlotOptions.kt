@@ -8,6 +8,8 @@
  */
 package com.github.aachartmodel.aainfographics.aaoptionsmodel
 
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AAPackedbubble
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AATreemap
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
 
 class AAPlotOptions {
@@ -21,6 +23,9 @@ class AAPlotOptions {
     var columnrange: Any? = null
     var arearange: Any? = null
     var series: AASeries? = null
+
+    var packedbubble: AAPackedbubble? = null
+    var treemap: AATreemap? = null
 
     fun column(prop: AAColumn): AAPlotOptions {
         column = prop
@@ -69,6 +74,16 @@ class AAPlotOptions {
 
     fun series(prop: AASeries): AAPlotOptions {
         series = prop
+        return this
+    }
+
+    fun packedbubble(prop: AAPackedbubble): AAPlotOptions {
+        packedbubble = prop
+        return this
+    }
+
+    fun treemap(prop: AATreemap): AAPlotOptions {
+        treemap = prop
         return this
     }
 

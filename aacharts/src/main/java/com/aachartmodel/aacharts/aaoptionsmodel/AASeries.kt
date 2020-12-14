@@ -22,6 +22,8 @@ class AASeries {
     private var events: Map<*, *>? = null
     private var shadow: AAShadow? = null
     private var dataLabels: AADataLabels? = null
+    var pointPadding: Float? = null
+    var groupPadding: Float? = null
 
     fun borderRadius(prop: Float?): AASeries {
         borderRadius = prop
@@ -72,4 +74,15 @@ class AASeries {
         dataLabels = prop
         return this
     }
+
+    fun pointPadding(prop: Float): AASeries {
+        pointPadding = prop
+        return this
+    }
+
+    fun groupPadding(prop: Float): AASeries {
+        groupPadding = prop
+        return this
+    }
+
 }

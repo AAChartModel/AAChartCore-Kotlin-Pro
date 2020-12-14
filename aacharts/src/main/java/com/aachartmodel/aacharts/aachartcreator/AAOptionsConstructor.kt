@@ -34,6 +34,7 @@
  */
 package com.github.aachartmodel.aainfographics.aachartcreator
 
+import com.aachartmodel.aacharts.aaoptionsmodel.AAAxisTitle
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.*
 
 object AAOptionsConstructor {
@@ -97,7 +98,7 @@ object AAOptionsConstructor {
             .tooltip(aaTooltip)
             .plotOptions(aaPlotOptions)
             .legend(aaLegend)
-            .series(aaChartModel.series)
+            .series(aaChartModel.series as Array<Any>)
             .colors(aaChartModel.colorsTheme) //设置颜色主题
             .touchEventEnabled(aaChartModel.touchEventEnabled) //是否支持点击事件
 
@@ -239,14 +240,10 @@ object AAOptionsConstructor {
                 .allowDecimals(aaChartModel.yAxisAllowDecimals) //是否允许显示小数
                 .reversed(aaChartModel.yAxisReversed)
                 .gridLineWidth(aaChartModel.yAxisGridLineWidth) //y轴网格线宽度
-                .title(
-                    AATitle()
+                .title(AAAxisTitle()
                         .text(aaChartModel.yAxisTitle)
-                        .style(
-                            AAStyle()
-                                .color(aaChartModel.axesTextColor)
-                        )
-                ) //y 轴标题
+                        .style(AAStyle()
+                                .color(aaChartModel.axesTextColor))) //y 轴标题
                 .lineWidth(aaChartModel.yAxisLineWidth) //设置 y轴轴线的宽度,为0即是隐藏 y轴轴线
                 .visible(aaChartModel.yAxisVisible)
 

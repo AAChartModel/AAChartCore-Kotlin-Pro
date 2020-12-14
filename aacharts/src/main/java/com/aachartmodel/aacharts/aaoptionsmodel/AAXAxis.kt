@@ -8,7 +8,11 @@
  */
 package com.github.aachartmodel.aainfographics.aaoptionsmodel
 
+import com.aachartmodel.aacharts.aaoptionsmodel.AAAxisTitle
+
 class AAXAxis {
+    var title: AAAxisTitle? = null
+    var type: String? = null
     var plotBands: Array<AAPlotBandsElement>? = null
     var plotLines: Array<AAPlotLinesElement>? = null
     var categories: Array<String>? = null
@@ -22,8 +26,8 @@ class AAXAxis {
     var tickColor: String? = null //x轴轴线下方刻度线颜色
     var gridLineWidth: Float? = null //x轴网格线宽度
     var gridLineColor: String? = null //x轴网格线颜色
+    var offset: Float? = null //x轴垂直偏移
     var gridLineDashStyle: String? = null //x轴网格线样式
-    var off: Float? = null//x轴垂直偏移
     var labels: AALabels? = null //用于设置 x 轴文字相关的
     var visible: Boolean? = null //用于设置 x 轴以及 x 轴文字是否显示
     var startOnTick: Boolean? =
@@ -37,6 +41,15 @@ class AAXAxis {
     var tickPosition: String? =
         null //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
+    fun title(prop: AAAxisTitle): AAXAxis {
+        title = prop
+        return this
+    }
+
+    fun type(prop: String): AAXAxis {
+        type = prop
+        return this
+    }
 
     fun plotBands(prop: Array<AAPlotBandsElement>): AAXAxis {
         plotBands = prop
@@ -109,8 +122,8 @@ class AAXAxis {
         return this
     }
 
-    fun off(prop: Float?): AAXAxis {
-        off = prop
+    fun offset(prop: Float): AAXAxis {
+        offset = prop
         return this
     }
 

@@ -27,6 +27,7 @@
  */
 package com.github.aachartmodel.aainfographics.aachartcreator
 
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AALevels
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AADataLabels
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AAMarker
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AATooltip
@@ -36,16 +37,15 @@ import com.github.aachartmodel.aainfographics.aaoptionsmodel.AATooltip
  * Created by anan on 2018/4/16.
  */
 
-
 class AASeriesElement {
-
-    private var type: String? = null
+    private var type: AAChartType? = null
     private var allowPointSelect: Boolean? = null
     private var name: String? = null
-    private var data: Array<Any>? = null
+    private var data: Array<Any>?= null
     private var lineWidth //折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
             : Float? = null
     private var borderWidth: Float? = null
+    private var borderRadius: Float? = null
     private var color: Any? = null
     private var fillColor: Any? = null
     private var fillOpacity //折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度
@@ -72,10 +72,14 @@ class AASeriesElement {
     private var showInLegend: Boolean? = null
     private var enableMouseTracking: Boolean? = null
     private var reversed: Boolean? = null
-
+    private var keys: Array<String>? = null
+    private var levels: Array<AALevels>? = null
+    private var allowDrillToNode: Boolean? = null
+    private var xAxis: Int? = null
+    private var baseSeries: Int? = null
 
     fun type(prop: AAChartType?): AASeriesElement {
-        type = prop?.value
+        type = prop
         return this
     }
 
@@ -101,6 +105,11 @@ class AASeriesElement {
 
     fun borderWidth(prop: Float?): AASeriesElement {
         borderWidth = prop
+        return this
+    }
+
+    fun borderRadius(prop: Float?): AASeriesElement {
+        borderRadius = prop
         return this
     }
 
@@ -144,8 +153,8 @@ class AASeriesElement {
         return this
     }
 
-    fun dashStyle(prop: AAChartLineDashStyleType?): AASeriesElement {
-        dashStyle = prop?.value
+    fun dashStyle(prop: String?): AASeriesElement {
+        dashStyle = prop
         return this
     }
 
@@ -219,7 +228,32 @@ class AASeriesElement {
         return this
     }
 
+    fun keys(prop: Array<String>): AASeriesElement {
+        keys = prop
+        return this
+    }
+
+    fun levels(prop: Array<AALevels>): AASeriesElement {
+        levels = prop
+        return this
+    }
+
+    fun allowDrillToNode(prop: Boolean?): AASeriesElement {
+        allowDrillToNode = prop
+        return this
+    }
+
+    fun xAxis(prop: Int?): AASeriesElement {
+        xAxis = prop
+        return this
+    }
+
+    fun baseSeries(prop: Int?): AASeriesElement {
+        baseSeries = prop
+        return this
+    }
 }
+
 
 class AADataElement {
     private var name: String? = null

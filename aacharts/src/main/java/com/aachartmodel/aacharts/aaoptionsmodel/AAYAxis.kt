@@ -8,8 +8,10 @@
  */
 package com.github.aachartmodel.aainfographics.aaoptionsmodel
 
+import com.aachartmodel.aacharts.aaoptionsmodel.AAAxisTitle
+
 class AAYAxis {
-    var title: AATitle? = null
+    var title: AAAxisTitle? = null
     var plotBands: Array<AAPlotBandsElement>? = null
     var plotLines: Array<AAPlotLinesElement>? = null
     var categories: Array<String>? = null
@@ -42,7 +44,7 @@ class AAYAxis {
         null //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
 
-    fun title(prop: AATitle): AAYAxis {
+    fun title(prop: AAAxisTitle): AAYAxis {
         title = prop
         return this
     }
