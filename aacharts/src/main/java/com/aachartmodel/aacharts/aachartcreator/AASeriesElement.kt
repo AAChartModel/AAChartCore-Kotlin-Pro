@@ -38,7 +38,7 @@ import com.github.aachartmodel.aainfographics.aaoptionsmodel.AATooltip
  */
 
 class AASeriesElement {
-    private var type: AAChartType? = null
+    private var type: String? = null
     private var allowPointSelect: Boolean? = null
     private var name: String? = null
     private var data: Array<Any>?= null
@@ -79,7 +79,7 @@ class AASeriesElement {
     private var baseSeries: Int? = null
 
     fun type(prop: AAChartType?): AASeriesElement {
-        type = prop
+        type = prop?.value
         return this
     }
 
