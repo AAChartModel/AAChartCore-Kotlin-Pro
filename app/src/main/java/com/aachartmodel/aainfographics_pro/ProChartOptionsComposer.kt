@@ -72,7 +72,7 @@ public class ProChartOptionsComposer {
                     .series(arrayOf(
                             AASeriesElement()
                                     .type(AAChartType.Treemap)
-                                    .levels(arrayOf<AALevels>(
+                                    .levels(arrayOf(
                                             AALevels()
                                                     .level(1)
                                                     .layoutAlgorithm("sliceAndDice")
