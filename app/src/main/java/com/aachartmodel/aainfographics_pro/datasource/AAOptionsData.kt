@@ -4,68 +4,68 @@ import com.google.gson.Gson
 
 
 object AAOptionsData {
-    val variablepieData: Array<Any>
-        get() = getLocalData("variablepieData")
+    val variablepieData
+            = getLocalData("variablepieData")
 
-    val variwideData : Array<Any>
-        get() = getLocalData("variwideData")
+    val variwideData
+            = getLocalData("variwideData")
 
-    val heatmapData : Array<Any>
-        get() = getLocalData("heatmapData")
+    val heatmapData
+            = getLocalData("heatmapData")
 
-    val columnpyramidData : Array<Any>
-        get() = getLocalData("columnpyramidData")
+    val columnpyramidData
+            = getLocalData("columnpyramidData")
 
-    val treemapWithColorAxisData : Array<Any>
-        get() = getLocalData("treemapWithColorAxisData")
+    val treemapWithColorAxisData
+            = getLocalData("treemapWithColorAxisData")
 
-    val drilldownTreemapData : Array<Any>
-        get() = getLocalData("drilldownTreemapData")
+    val drilldownTreemapData
+            = getLocalData("drilldownTreemapData")
 
-    val sankeyData : Array<Any>
-        get() = getLocalData("sankeyData")
+    val sankeyData
+            = getLocalData("sankeyData")
 
-    val dependencywheelData : Array<Any>
-        get() = getLocalData("dependencywheelData")
+    val dependencywheelData
+            = getLocalData("dependencywheelData")
 
-    val sunburstData : Array<Any>
-        get() = getLocalData("sunburstData")
+    val sunburstData
+            = getLocalData("sunburstData")
 
-    val dumbbellData : Array<Any>
-        get() = getLocalData("dumbbellData")
+    val dumbbellData
+            = getLocalData("dumbbellData")
 
-    val vennData : Array<Any>
-        get() = getLocalData("vennData")
+    val vennData
+            = getLocalData("vennData")
 
-    val lollipopData : Array<Any>
-        get() = getLocalData("lollipopData")
+    val lollipopData
+            = getLocalData("lollipopData")
 
-    val tilemapData : Array<Any>
-        get() = getLocalData("tilemapData")
+    val tilemapData
+            = getLocalData("tilemapData")
 
-    val treemapWithLevelsData : Array<Any>
-        get() = getLocalData("treemapWithLevelsData")
+    val treemapWithLevelsData
+            = getLocalData("treemapWithLevelsData")
 
-    val bellcurveData : Array<Any>
-        get() = getLocalData("bellcurveData")
+    val bellcurveData
+            = getLocalData("bellcurveData")
 
-    val timelineData : Array<Any>
-        get() = getLocalData("timelineData")
+    val timelineData
+            = getLocalData("timelineData")
 
-    val itemData : Array<Any>
-        get() = getLocalData("itemData")
+    val itemData
+            = getLocalData("itemData")
 
-    val windbarbData : Array<Any>
-        get() = getLocalData("windbarbData")
+    val windbarbData
+            = getLocalData("windbarbData")
 
-    val networkgraphData : Array<Any>
-        get() = getLocalData("networkgraphData")
+    val networkgraphData
+            = getLocalData("networkgraphData")
 
-    val wordcloudData : Array<Any>
-        get() = getLocalData("wordcloudData")
+    val wordcloudData
+            = getLocalData("wordcloudData")
 
-    val eulerData : Array<Any>
-        get() = getLocalData("eulerData")
+    val eulerData
+            = getLocalData("eulerData")
 
     val xrangeData: Array<Any>
         get() {
@@ -79,8 +79,8 @@ object AAOptionsData {
             return dataArr.toTypedArray()
         }
 
-    val vectorData : Array<Any>
-        get() = getLocalData("vectorData")
+    val vectorData
+            = getLocalData("vectorData")
 
 
     private fun getLocalData(jsonFileName: String): Array<Any> {
