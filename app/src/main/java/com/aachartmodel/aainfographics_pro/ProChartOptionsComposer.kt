@@ -144,8 +144,7 @@ public class ProChartOptionsComposer {
                                     AALevels()
                                             .level(2)
                                             .colorByPoint(true)
-                                            .layoutAlgorithm("sliceAndDice")
-                                    ,
+                                            .layoutAlgorithm("sliceAndDice"),
                                     AALevels()
                                             .level(3)
                                             .colorVariation(AAColorVariation()
@@ -169,8 +168,6 @@ public class ProChartOptionsComposer {
         }
 
         fun dependencywheelChart(): AAOptions {
-            val attributes = HashMap<Any?, Any?>()
-            attributes["dy"] = 5
             return AAOptions()
                     .chart(AAChart()
                             .marginLeft(20f)
@@ -189,7 +186,7 @@ public class ProChartOptionsComposer {
                                             .distance(10f)
                                             .textPath(AATextPath()
                                                     .enabled(true)
-                                                    .attributes(attributes)))
+                                                    .attributes(mapOf("dy" to 5))))
                     ))
         }
 
@@ -205,13 +202,11 @@ public class ProChartOptionsComposer {
                             .visible(true)
                             .categories(arrayOf(
                                     "Alexander", "Marie", "Maximilian", "Sophia",
-                                    "Lukas", "Maria", "Leon", "Anna", "Tim", "Laura"
-                            )))
+                                    "Lukas", "Maria", "Leon", "Anna", "Tim", "Laura")))
                     .yAxis(AAYAxis()
                             .visible(true)
                             .categories(arrayOf(
-                                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
-                            ))
+                                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"))
                             .title(AAAxisTitle()
                                     .text("")))
                     .colorAxis(AAColorAxis()
@@ -237,8 +232,7 @@ public class ProChartOptionsComposer {
                                     .data(AAOptionsData.heatmapData)
                                     .dataLabels(AADataLabels()
                                             .enabled(true)
-                                            .color(AAColor.redColor()))
-                    ))
+                                            .color(AAColor.redColor()))))
         }
 
 
@@ -282,8 +276,7 @@ public class ProChartOptionsComposer {
                     .tooltip(AATooltip()
                             .enabled(true)
                             .useHTML(true)
-                            .pointFormat("<b>{point.name}:<\\/b> {point.y}m CO<sub>2<\\/sub>")
-                    )
+                            .pointFormat("<b>{point.name}:<\\/b> {point.y}m CO<sub>2<\\/sub>"))
                     .plotOptions(AAPlotOptions()
                             .packedbubble(AAPackedbubble()
                                     .minSize("30%")
@@ -394,8 +387,7 @@ public class ProChartOptionsComposer {
                             "#7cb5ec", "#434348", "#90ed7d", "#f7a35c", "#8085e9",
                             "rgb(255,143,179)", "rgb(255,117,153)",
                             "#f15c80", "#e4d354", "#2b908f", "#f45b5b", "#91e8e1", "#7cb5ec", "#434348", "#f7a35c",
-                            "rgb(119,212,100)", "rgb(93,186,74)", "rgb(68,161,49)"
-                    ))
+                            "rgb(119,212,100)", "rgb(93,186,74)", "rgb(68,161,49)"))
                     .title(AATitle()
                             .text("冬季奥运会奖牌分布"))
                     .subtitle(AASubtitle()
@@ -406,8 +398,7 @@ public class ProChartOptionsComposer {
                             .categories(arrayOf(
                                     "", "1924", "1928", "1932", "1936", "1940", "1944", "1948", "1952", "1956", "1960",
                                     "1964", "1968", "1972", "1976", "1980", "1984", "1988", "1992", "1994", "1998",
-                                    "2002", "2006", "2010", "2014"
-                            )))
+                                    "2002", "2006", "2010", "2014")))
                     .yAxis(AAYAxis()
                             .visible(false))
                     .tooltip(AATooltip()
@@ -429,8 +420,7 @@ public class ProChartOptionsComposer {
                     .yAxis(AAYAxis()
                             .visible(true)
                             .title(AAAxisTitle()
-                                    .text("高度 (m)"))
-                    )
+                                    .text("高度 (m)")))
                     .tooltip(AATooltip()
                             .enabled(true)
                             .valueSuffix(" m"))
@@ -438,8 +428,7 @@ public class ProChartOptionsComposer {
                             AASeriesElement()
                                     .name("Height")
                                     .colorByPoint(true)
-                                    .data(AAOptionsData.columnpyramidData)
-                    ))
+                                    .data(AAOptionsData.columnpyramidData)))
         }
 
         fun tilemapChart(): AAOptions {
@@ -489,8 +478,7 @@ public class ProChartOptionsComposer {
                             AASeriesElement()
                                     .name("Height")
                                     .colorByPoint(true)
-                                    .data(AAOptionsData.tilemapData)
-                    ))
+                                    .data(AAOptionsData.tilemapData)))
         }
 
 
@@ -505,8 +493,7 @@ public class ProChartOptionsComposer {
                             .maxColor("#FF0000"))
                     .series(arrayOf(
                             AASeriesElement()
-                                    .data(AAOptionsData.treemapWithColorAxisData)
-                    ))
+                                    .data(AAOptionsData.treemapWithColorAxisData)))
         }
 
         fun drilldownTreemapChart(): AAOptions {
@@ -529,10 +516,8 @@ public class ProChartOptionsComposer {
                                                     .level(1)
                                                     .dataLabels(AADataLabels()
                                                             .enabled(true))
-                                                    .borderWidth(3f)
-                                    ))
-                                    .data(AAOptionsData.drilldownTreemapData)
-                    ))
+                                                    .borderWidth(3f)))
+                                    .data(AAOptionsData.drilldownTreemapData)))
         }
 
         fun xrangeChart(): AAOptions {
@@ -543,8 +528,7 @@ public class ProChartOptionsComposer {
                             "#7cb5ec", "#434348", "#90ed7d", "#f7a35c", "#8085e9",
                             "rgb(255,143,179)", "rgb(255,117,153)",
                             "#f15c80", "#e4d354", "#2b908f", "#f45b5b", "#91e8e1", "#7cb5ec", "#434348", "#f7a35c",
-                            "rgb(119,212,100)", "rgb(93,186,74)", "rgb(68,161,49)"
-                    ))
+                            "rgb(119,212,100)", "rgb(93,186,74)", "rgb(68,161,49)"))
                     .title(AATitle()
                             .text(""))
                     .yAxis(AAYAxis()
@@ -559,13 +543,11 @@ public class ProChartOptionsComposer {
                     .plotOptions(AAPlotOptions()
                             .series(AASeries()
                                     .pointPadding(0f)
-                                    .groupPadding(0f)
-                            ))
+                                    .groupPadding(0f)))
                     .series(arrayOf(
                             AASeriesElement()
                                     .borderRadius(2f)
-                                    .data(AAOptionsData.xrangeData)
-                    ))
+                                    .data(AAOptionsData.xrangeData)))
         }
 
         fun vectorChart(): AAOptions {
@@ -578,8 +560,7 @@ public class ProChartOptionsComposer {
                     .series(arrayOf(
                             AASeriesElement()
                                     .name("Sample vector field")
-                                    .data(AAOptionsData.vectorData)
-                    ))
+                                    .data(AAOptionsData.vectorData)))
         }
 
         fun bellcurveChart(): AAOptions {
@@ -615,8 +596,7 @@ public class ProChartOptionsComposer {
                                             .fillColor("#ffffff") //点的填充色(用来设置折线连接点的填充色)
                                             .lineWidth(2f) //外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
                                             .lineColor("")) //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色))
-                                    .data(AAOptionsData.bellcurveData)
-                    ))
+                                    .data(AAOptionsData.bellcurveData)))
         }
 
         fun timelineChart(): AAOptions {
@@ -631,8 +611,7 @@ public class ProChartOptionsComposer {
                             .visible(false))
                     .series(arrayOf(
                             AASeriesElement()
-                                    .data(AAOptionsData.timelineData)
-                    ))
+                                    .data(AAOptionsData.timelineData)))
         }
 
 
@@ -653,8 +632,7 @@ public class ProChartOptionsComposer {
                                     .data(AAOptionsData.itemData)
                                     .dataLabels(AADataLabels()
                                             .enabled(false))
-                                    .size("170%")
-                    ))
+                                    .size("170%")))
         }
 
         fun windbarbChart(): AAOptions {
