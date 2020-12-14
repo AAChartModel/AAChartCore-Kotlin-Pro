@@ -69,9 +69,27 @@ object AAOptionsData {
 
     val xrangeData: Array<Any>
         get() {
+            fun singleGroupCategoryDataElementArray(y: Int): Array<Any> {
+                val dataArr = ArrayList<Any>()
+                var x = 0
+                var x2 = (x + Math.random() % 10).toInt()
+                for (i in 0..49) {
+                    val dataElementMap = mapOf(
+                            "x"  to x,
+                            "x2" to x2,
+                            "y"  to y
+                    )
+                    dataArr.add(dataElementMap)
+
+                    x = (x2 + Math.random() * 1000).toInt()
+                    x2 = (x + Math.random() * 2000).toInt()
+                }
+                return dataArr.toTypedArray()
+            }
+
             val dataArr = ArrayList<Any>()
             for (i in 0..19) {
-                val data = getSingleGroupCategoryDataElementArrayWithY(i)
+                val data = singleGroupCategoryDataElementArray(i)
                 for (dataElement in data) {
                     dataArr.add(dataElement)
                 }
@@ -86,24 +104,5 @@ object AAOptionsData {
     private fun getLocalData(jsonFileName: String): Array<Any> {
         val jsonStr = AAJsonTool.getLocalJson("data/$jsonFileName.json")
         return Gson().fromJson(jsonStr, arrayOf<Any>().javaClass)
-    }
-
-
-    private fun getSingleGroupCategoryDataElementArrayWithY(y: Int): Array<Any> {
-        val dataArr = ArrayList<Any>()
-        var x = 0
-        var x2 = (x + Math.random() % 10).toInt()
-        for (i in 0..49) {
-            val dataElementMap = mapOf(
-                    "x"  to x,
-                    "x2" to x2,
-                    "y"  to y
-            )
-            dataArr.add(dataElementMap)
-
-            x = (x2 + Math.random() * 1000).toInt()
-            x2 = (x + Math.random() * 2000).toInt()
-        }
-        return dataArr.toTypedArray()
     }
 }
