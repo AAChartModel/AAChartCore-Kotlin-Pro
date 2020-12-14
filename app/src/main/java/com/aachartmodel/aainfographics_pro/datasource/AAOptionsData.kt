@@ -1,75 +1,71 @@
 package com.aachartmodel.aainfographics_pro.datasource
 
-import com.aachartmodel.aainfographics_pro.BaseApplication
 import com.google.gson.Gson
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStream
-import java.io.InputStreamReader
+
 
 object AAOptionsData {
     val variablepieData: Array<Any>
-        get() = getJsonDataWithJsonFileName("variablepieData")
+        get() = getLocalData("variablepieData")
 
     val variwideData : Array<Any>
-        get() = getJsonDataWithJsonFileName("variwideData")
+        get() = getLocalData("variwideData")
 
     val heatmapData : Array<Any>
-        get() = getJsonDataWithJsonFileName("heatmapData")
+        get() = getLocalData("heatmapData")
 
     val columnpyramidData : Array<Any>
-        get() = getJsonDataWithJsonFileName("columnpyramidData")
+        get() = getLocalData("columnpyramidData")
 
     val treemapWithColorAxisData : Array<Any>
-        get() = getJsonDataWithJsonFileName("treemapWithColorAxisData")
+        get() = getLocalData("treemapWithColorAxisData")
 
     val drilldownTreemapData : Array<Any>
-        get() = getJsonDataWithJsonFileName("drilldownTreemapData")
+        get() = getLocalData("drilldownTreemapData")
 
     val sankeyData : Array<Any>
-        get() = getJsonDataWithJsonFileName("sankeyData")
+        get() = getLocalData("sankeyData")
 
     val dependencywheelData : Array<Any>
-        get() = getJsonDataWithJsonFileName("dependencywheelData")
+        get() = getLocalData("dependencywheelData")
 
     val sunburstData : Array<Any>
-        get() = getJsonDataWithJsonFileName("sunburstData")
+        get() = getLocalData("sunburstData")
 
     val dumbbellData : Array<Any>
-        get() = getJsonDataWithJsonFileName("dumbbellData")
+        get() = getLocalData("dumbbellData")
 
     val vennData : Array<Any>
-        get() = getJsonDataWithJsonFileName("vennData")
+        get() = getLocalData("vennData")
 
     val lollipopData : Array<Any>
-        get() = getJsonDataWithJsonFileName("lollipopData")
+        get() = getLocalData("lollipopData")
 
     val tilemapData : Array<Any>
-        get() = getJsonDataWithJsonFileName("tilemapData")
+        get() = getLocalData("tilemapData")
 
     val treemapWithLevelsData : Array<Any>
-        get() = getJsonDataWithJsonFileName("treemapWithLevelsData")
+        get() = getLocalData("treemapWithLevelsData")
 
     val bellcurveData : Array<Any>
-        get() = getJsonDataWithJsonFileName("bellcurveData")
+        get() = getLocalData("bellcurveData")
 
     val timelineData : Array<Any>
-        get() = getJsonDataWithJsonFileName("timelineData")
+        get() = getLocalData("timelineData")
 
     val itemData : Array<Any>
-        get() = getJsonDataWithJsonFileName("itemData")
+        get() = getLocalData("itemData")
 
     val windbarbData : Array<Any>
-        get() = getJsonDataWithJsonFileName("windbarbData")
+        get() = getLocalData("windbarbData")
 
     val networkgraphData : Array<Any>
-        get() = getJsonDataWithJsonFileName("networkgraphData")
+        get() = getLocalData("networkgraphData")
 
     val wordcloudData : Array<Any>
-        get() = getJsonDataWithJsonFileName("wordcloudData")
+        get() = getLocalData("wordcloudData")
 
     val eulerData : Array<Any>
-        get() = getJsonDataWithJsonFileName("eulerData")
+        get() = getLocalData("eulerData")
 
     val xrangeData: Array<Any>
         get() {
@@ -84,28 +80,14 @@ object AAOptionsData {
         }
 
     val vectorData : Array<Any>
-        get() = getJsonDataWithJsonFileName("vectorData")
+        get() = getLocalData("vectorData")
 
 
-    private fun getJsonDataWithJsonFileName(jsonFileName: String): Array<Any> {
-        val jsonStr = getJson("data/$jsonFileName.json")
+    private fun getLocalData(jsonFileName: String): Array<Any> {
+        val jsonStr = AAJsonTool.getLocalJson("data/$jsonFileName.json")
         return Gson().fromJson(jsonStr, arrayOf<Any>().javaClass)
     }
 
-    private fun getJson(fileName: String): String {
-        val stringBuilder = StringBuilder()
-        try {
-            val inputStream: InputStream = BaseApplication.getContext().assets.open(fileName)
-            val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-            var line: String?
-            while (bufferedReader.readLine().also { line = it } != null) {
-                stringBuilder.append(line)
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return stringBuilder.toString()
-    }
 
     private fun getSingleGroupCategoryDataElementArrayWithY(y: Int): Array<Any> {
         val dataArr = ArrayList<Any>()
