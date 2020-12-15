@@ -274,11 +274,10 @@ object AAGradientColor {
         startColor: String,
         endColor: String
     ): Map<String, Any> {
-        val stopsArr = arrayOf<Any>(
-            arrayOf(0, startColor),
-            arrayOf(1, endColor)
-        )
-        return linearGradient(direction, stopsArr)
+        return linearGradient(direction, arrayOf<Any>(
+                arrayOf(0, startColor),
+                arrayOf(1, endColor)
+        ))
     }
 
     fun linearGradient(
