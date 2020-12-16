@@ -49,7 +49,7 @@ object AAColor {
             red: Int,
             green: Int,
             blue: Int,
-            alpha: Float
+            alpha: Float = 1f
     ): String {
         return "rgba($red,$green,$blue,$alpha)"
     }
