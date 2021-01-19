@@ -37,13 +37,13 @@ public class ProChartOptionsComposer {
         }
 
         fun variablepieChart(): AAOptions {
-            val aaChart: AAChart = AAChart()
+            val aaChart = AAChart()
                     .type(AAChartType.Variablepie)
-            val aaTitle: AATitle = AATitle()
+            val aaTitle = AATitle()
                     .text("不同国家人口密度及面积对比")
-            val aaSubtitle: AASubtitle = AASubtitle()
+            val aaSubtitle = AASubtitle()
                     .text("扇区长度（圆周方法）表示面积，宽度（纵向）表示人口密度")
-            val aaTooltip: AATooltip = AATooltip()
+            val aaTooltip = AATooltip()
                     .enabled(true)
                     .headerFormat("")
                     .pointFormat("<span style=\\\\\\\"color:{point.color}\\\\\\\\\\\\\\\">○<\\/span> <b> {point.name}<\\/b><br\\/>\\\\\\\"面积 (平方千米): <b>{point.y}<\\/b><br\\/>\\\\\\\"人口密度 (每平方千米人数): <b>{point.z}<\\/b><br\\/>\\\\\\\"")
