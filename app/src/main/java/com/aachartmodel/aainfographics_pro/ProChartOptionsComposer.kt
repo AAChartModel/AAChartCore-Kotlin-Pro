@@ -700,228 +700,211 @@ public class ProChartOptionsComposer {
                                     .data(AAOptionsData.eulerData)))
         }
 
-            fun organizationChart(): AAOptions {
-                    return AAOptions()
-                            .chart(AAChart() //            .height(600)
-                                    .inverted(true))
-                            .title(AATitle()
-                                    .text("Highsoft 公司组织结构"))
-                            .series(arrayOf(
-                                    AASeriesElement()
-                                            .type(AAChartType.Organization)
-                                            .name("Highsoft")
-                                            .keys(arrayOf("from", "to"))
-                                            .data(AAOptionsData.organizationData)
-                                            .levels(arrayOf(
-                                                    AALevelsElement()
-                                                            .level(0)
-                                                            .color("silver")
-                                                            .dataLabels(AADataLabels()
-                                                                            .color(AAColor.Black))
-//                                                                            .height(25f)
-                                                    ,
-                                                    AALevelsElement()
-                                                            .level(1)
-                                                            .color("silver")
-                                                            .dataLabels(AADataLabels()
-                                                                            .color(AAColor.Black))
-//                                                                            .height(25f)
-                                                    ,
-                                                    AALevelsElement()
-                                                            .level(2)
-                                                            .color("#980104"),
-                                                    AALevelsElement()
-                                                            .level(4)
-                                                            .color("#359154")
-                                            ))
-                                            .nodes(AAOptionsData.organizationNodesData)
-                                            .colorByPoint(false)
-                                            .color("#007ad0")
-                                            .dataLabels(AADataLabels()
-                                                            .color(AAColor.White))
-//                                                    .borderColor(AAColor.White)
-                                            .nodeWidth(65f)))
-                            .tooltip(AATooltip() //                    .outside(true)
-                            )
-            }
-
-            //https://www.highcharts.com/docs/chart-and-series-types/arc-diagram
-            fun arcdiagramChart1(): AAOptions {
-                    return AAOptions()
-                            .colors(arrayOf(
-                                    "#293462",
-                                    "#a64942",
-                                    "#fe5f55",
-                                    "#fff1c1",
-                                    "#5bd1d7",
-                                    "#ff502f",
-                                    "#004d61",
-                                    "#ff8a5c",
-                                    "#fff591",
-                                    "#f5587b",
-                                    "#fad3cf",
-                                    "#a696c8",
-                                    "#5BE7C4",
-                                    "#266A2E",
-                                    "#593E1A"
-                            ))
-                            .title(AATitle()
-                                    .text("Main train connections in Europe"))
-                            .series(arrayOf(
-                                    AASeriesElement()
-                                            .keys(arrayOf("from", "to", "weight"))
-                                            .type(AAChartType.Arcdiagram)
-                                            .name("Train connections")
-                                            .linkWeight(1)
-                                            .centeredLinks(true)
-                                            .dataLabels(AADataLabels()
-                                                    .rotation(90f)
-                                                    .y(30f)
-                                                    .align(AAChartAlignType.Left)
-                                                    .color(AAColor.Black))
-                                            .offset("65%")
-                                            .data(AAOptionsData.arcdiagram1Data)))
-            }
-
-            fun arcdiagramChart2(): AAOptions {
-                    return AAOptions()
-                            .title(AATitle()
-                                    .text("Highcharts Arc Diagram"))
-                            .subtitle(AASubtitle()
-                                            .text("Arc Diagram with marker symbols"))
-                            .series(arrayOf(
-                                            AASeriesElement()
-                                                    .linkWeight(1)
-                                                    .keys(arrayOf("from", "to", "weight"))
-                                                    .type(AAChartType.Arcdiagram)
-                                                    .marker(AAMarker()
-                                                                    .symbol(AAChartSymbolType.Triangle.value)
-                                                                    .lineWidth(2f)
-                                                                    .lineColor(AAColor.White))
-                                                    .centeredLinks(true)
-                                                    .dataLabels(AADataLabels()
-                                                                    .format("{point.fromNode.name} → {point.toNode.name}")
-                                                                    .nodeFormat("{point.name}")
-                                                                    .color(AAColor.Black)
-                                                                    .linkTextPath(AATextPath()
-                                                                                    .enabled(true)))
-                                                    .data(AAOptionsData.arcdiagram2Data)))
-            }
-
-            fun arcdiagramChart3(): AAOptions {
-                    return AAOptions()
-                            .chart(AAChart()
-                                    .inverted(true))
-                            .title(AATitle()
-                                    .text("Highcharts Inverted Arc Diagram"))
-                            .series(arrayOf(AASeriesElement()
-                                                    .keys(arrayOf("from", "to", "weight")) //                .centerPos("50%")
-                                                    .type(AAChartType.Arcdiagram)
-                                                    .dataLabels(
-                                                            AADataLabels()
-                                                                    .align(AAChartAlignType.Right)
-                                                                    .x(-20f)
-                                                                    .y(-2f)
-                                                                    .color("#333333")
-                                                                    .overflow("allow")
-                                                                    .padding(0f)
-                                                    )
-                                                    .offset("60%")
-                                                    .data(AAOptionsData.arcdiagram3Data)
-                                    )
-                            )
-            }
-
-            fun flameChart(): AAOptions {
-                    return AAOptions()
-                            .chart(AAChart()
-                                            .inverted(true))
-                            .title(AATitle()
-                                            .align(AAChartAlignType.Left)
-                                            .text("Flame chart (layout: flame)"))
-                            .subtitle(AASubtitle()
-                                            .align(AAChartAlignType.Left)
-                                            .text("Highcharts chart rendering process"))
-                            .legend(AALegend()
-                                            .enabled(false))
-                            .xAxisArray(arrayOf(
-                                            AAXAxis()
-                                                    .visible(false),
-                                            AAXAxis()
-                                                    .visible(false)
-                                                    .startOnTick(false)
-                                                    .endOnTick(false)
-                                                    .minPadding(0f)
-                                                    .maxPadding(0f)
-                                    ))
-                            .yAxisArray(arrayOf(
-                                            AAYAxis()
-                                                    .visible(false),
-                                            AAYAxis()
-                                                    .visible(false)
-                                                    .min(0f)
-                                                    .maxPadding(0f)
-                                                    .startOnTick(false)
-                                                    .endOnTick(false)
-                                    ))
-                            .series(arrayOf(
-                                            AASeriesElement()
-                                                    .type(AAChartType.Flame)
-                                                    .data(AAOptionsData.flameData)
-                                                    .yAxis(1)
-                                                    .xAxis(1),
-                                            AASeriesElement()
-//                                                    .visible(false)
-                                                    .size("100%")
-                                                    .type(AAChartType.Sunburst)
-                                                    .data(AAOptionsData.sunburst2Data)
-                                                    .allowDrillToNode(true)
-                                                    .cursor("pointer")
-                                                    .levels(arrayOf(
-                                                                    AALevelsElement()
-                                                                            .level(1) //                        .levelIsConstant(false)
-                                                                            .dataLabels(AADataLabels()
-                                                                                            .enabled(
-                                                                                                    false
-                                                                                            ))))
-                                                    .dataLabels(AADataLabels()
-                                                                    .textPath(AATextPath()
-                                                                                    .attributes(mapOf("dy" to 5))
-                                                                                    .enabled(true)))))
-                            .tooltip(AATooltip()
-                                            .headerFormat("")
-                                            .pointFormat("selfSize of {point.name} is {point.value}"))
-            }
 
 
-            fun packedbubbleSpiralChart(): AAOptions {
-                    return AAOptions()
-                            .chart(AAChart()
-                                    .type(AAChartType.Packedbubble) //            .height("100%")
-                            )
-                            .title(AATitle()
-                                            .text("Carbon emissions around the world (2014)"))
-                            .tooltip(AATooltip()
-                                            .useHTML(true)
-                                            .pointFormat("{point.name}: {point.y}m CO2"))
-                            .plotOptions(AAPlotOptions()
-                                            .packedbubble(AAPackedbubble()
-                                                            .useSimulation(false)
-                                                            .minSize("20%")
-                                                            .maxSize("80%")
-                                                            .dataLabels(AADataLabels()
-                                                                            .enabled(true)
-                                                                            .format("{point.name}")
-                                                                            .filter(AAFilter()
-                                                                                            .property("y")
-                                                                                            .operator(">")
-                                                                                            .value(250f))
-                                                                            .style(AAStyle()
-                                                                                            .color(AAColor.Black)
-                                                                                            .textOutline("none")
-                                                                                            .fontWeight(AAChartFontWeightType.Regular)))))
-                            .series(AAOptionsSeries.packedbubbleSeries)
-            }
+        fun organizationChart(): AAOptions {
+                return AAOptions()
+                        .chart(AAChart() //            .height(600)
+                                .inverted(true))
+                        .title(AATitle()
+                                .text("Highsoft 公司组织结构"))
+                        .series(arrayOf(
+                                AASeriesElement()
+                                        .type(AAChartType.Organization)
+                                        .name("Highsoft")
+                                        .keys(arrayOf("from", "to"))
+                                        .data(AAOptionsData.organizationData)
+                                        .levels(arrayOf(
+                                                AALevelsElement()
+                                                        .level(0)
+                                                        .color("silver")
+                                                        .dataLabels(AADataLabels()
+                                                                .color(AAColor.Black))
+                                                        .height(25f)
+                                                ,
+                                                AALevelsElement()
+                                                        .level(1)
+                                                        .color("silver")
+                                                        .dataLabels(AADataLabels()
+                                                                .color(AAColor.Black))
+                                                        .height(25f)
+                                                ,
+                                                AALevelsElement()
+                                                        .level(2)
+                                                        .color("#980104"),
+                                                AALevelsElement()
+                                                        .level(4)
+                                                        .color("#359154")
+                                        ))
+                                        .nodes(AAOptionsData.organizationNodesData)
+                                        .colorByPoint(false)
+                                        .color("#007ad0")
+                                        .dataLabels(AADataLabels()
+                                                .color(AAColor.White))
+                                                    .borderColor(AAColor.White)
+                                        .nodeWidth(65f)))
+                        .tooltip(AATooltip()
+                                .outside(true)
+                        )
+        }
 
+        //https://www.highcharts.com/docs/chart-and-series-types/arc-diagram
+        fun arcdiagramChart1(): AAOptions {
+                return AAOptions()
+                        .colors(arrayOf(
+                                "#293462", "#a64942", "#fe5f55", "#fff1c1", "#5bd1d7", "#ff502f", "#004d61",
+                                "#ff8a5c", "#fff591", "#f5587b", "#fad3cf", "#a696c8", "#5BE7C4", "#266A2E", "#593E1A"
+                        ))
+                        .title(AATitle()
+                                .text("Main train connections in Europe"))
+                        .series(arrayOf(
+                                AASeriesElement()
+                                        .keys(arrayOf("from", "to", "weight"))
+                                        .type(AAChartType.Arcdiagram)
+                                        .name("Train connections")
+                                        .linkWeight(1)
+                                        .centeredLinks(true)
+                                        .dataLabels(AADataLabels()
+                                                .rotation(90f)
+                                                .y(30f)
+                                                .align(AAChartAlignType.Left)
+                                                .color(AAColor.Black))
+                                        .offset("65%")
+                                        .data(AAOptionsData.arcdiagram1Data)))
+        }
+
+        fun arcdiagramChart2(): AAOptions {
+                return AAOptions()
+                        .title(AATitle()
+                                .text("Highcharts Arc Diagram"))
+                        .subtitle(AASubtitle()
+                                .text("Arc Diagram with marker symbols"))
+                        .series(arrayOf(
+                                AASeriesElement()
+                                        .linkWeight(1)
+                                        .keys(arrayOf("from", "to", "weight"))
+                                        .type(AAChartType.Arcdiagram)
+                                        .marker(AAMarker()
+                                                .symbol(AAChartSymbolType.Triangle.value)
+                                                .lineWidth(2f)
+                                                .lineColor(AAColor.White))
+                                        .centeredLinks(true)
+                                        .dataLabels(AADataLabels()
+                                                .format("{point.fromNode.name} → {point.toNode.name}")
+                                                .nodeFormat("{point.name}")
+                                                .color(AAColor.Black)
+                                                .linkTextPath(AATextPath()
+                                                        .enabled(true)))
+                                        .data(AAOptionsData.arcdiagram2Data)))
+        }
+
+        fun arcdiagramChart3(): AAOptions {
+                return AAOptions()
+                        .chart(AAChart()
+                                .inverted(true))
+                        .title(AATitle()
+                                .text("Highcharts Inverted Arc Diagram"))
+                        .series(arrayOf(AASeriesElement()
+                                .keys(arrayOf("from", "to", "weight")) //                .centerPos("50%")
+                                .type(AAChartType.Arcdiagram)
+                                .dataLabels(
+                                        AADataLabels()
+                                                .align(AAChartAlignType.Right)
+                                                .x(-20f)
+                                                .y(-2f)
+                                                .color("#333333")
+                                                .overflow("allow")
+                                                .padding(0f))
+                                .offset("60%")
+                                .data(AAOptionsData.arcdiagram3Data)))
+        }
+
+        fun flameChart(): AAOptions {
+                return AAOptions()
+                        .chart(AAChart()
+                                .inverted(true))
+                        .title(AATitle()
+                                .align(AAChartAlignType.Left)
+                                .text("Flame chart (layout: flame)"))
+                        .subtitle(AASubtitle()
+                                .align(AAChartAlignType.Left)
+                                .text("Highcharts chart rendering process"))
+                        .legend(AALegend()
+                                .enabled(false))
+                        .xAxisArray(arrayOf(
+                                AAXAxis()
+                                        .visible(false),
+                                AAXAxis()
+                                        .visible(false)
+                                        .startOnTick(false)
+                                        .endOnTick(false)
+                                        .minPadding(0f)
+                                        .maxPadding(0f)))
+                        .yAxisArray(arrayOf(
+                                AAYAxis()
+                                        .visible(false),
+                                AAYAxis()
+                                        .visible(false)
+                                        .min(0f)
+                                        .maxPadding(0f)
+                                        .startOnTick(false)
+                                        .endOnTick(false)))
+                        .series(arrayOf(
+                                AASeriesElement()
+                                        .type(AAChartType.Flame)
+                                        .data(AAOptionsData.flameData)
+                                        .yAxis(1)
+                                        .xAxis(1),
+                                AASeriesElement()
+                                        .visible(false)
+                                        .size("100%")
+                                        .type(AAChartType.Sunburst)
+                                        .data(AAOptionsData.sunburst2Data)
+                                        .allowDrillToNode(true)
+                                        .cursor("pointer")
+                                        .levels(arrayOf(
+                                                AALevelsElement()
+                                                        .level(1) //                        .levelIsConstant(false)
+                                                        .dataLabels(AADataLabels()
+                                                                .enabled(false))))
+                                        .dataLabels(AADataLabels()
+                                                .textPath(AATextPath()
+                                                        .attributes(mapOf("dy" to 5))
+                                                        .enabled(true)))))
+                        .tooltip(AATooltip()
+                                .headerFormat("")
+                                .pointFormat("selfSize of {point.name} is {point.value}"))
+        }
+
+
+        fun packedbubbleSpiralChart(): AAOptions {
+                return AAOptions()
+                        .chart(AAChart()
+                                .type(AAChartType.Packedbubble) //            .height("100%")
+                        )
+                        .title(AATitle()
+                                .text("Carbon emissions around the world (2014)"))
+                        .tooltip(AATooltip()
+                                .useHTML(true)
+                                .pointFormat("{point.name}: {point.y}m CO2"))
+                        .plotOptions(AAPlotOptions()
+                                .packedbubble(AAPackedbubble()
+                                        .useSimulation(false)
+                                        .minSize("20%")
+                                        .maxSize("80%")
+                                        .dataLabels(AADataLabels()
+                                                .enabled(true)
+                                                .format("{point.name}")
+                                                .filter(AAFilter()
+                                                        .property("y")
+                                                        .operator(">")
+                                                        .value(250f))
+                                                .style(AAStyle()
+                                                        .color(AAColor.Black)
+                                                        .textOutline("none")
+                                                        .fontWeight(AAChartFontWeightType.Regular)))))
+                        .series(AAOptionsSeries.packedbubbleSeries)
+        }
     }
+
 }

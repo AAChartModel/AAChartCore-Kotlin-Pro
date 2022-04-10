@@ -14,6 +14,7 @@ class AALevelsElement {
     var layoutStartingDirection: String? = null
     var level: Any? = null
     var colorVariation: AAColorVariation? = null
+    var height: Float? = null
 
     fun borderColor(prop: String?): AALevelsElement {
         borderColor = prop
@@ -62,6 +63,11 @@ class AALevelsElement {
 
     fun colorVariation(prop: AAColorVariation?): AALevelsElement {
         colorVariation = prop
+        return this
+    }
+
+    fun height(prop: Float): AALevelsElement {
+        height = prop
         return this
     }
 }

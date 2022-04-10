@@ -45,6 +45,7 @@ class AASeriesElement {
     private var lineWidth //折线图、曲线图、直方折线图、折线填充图、曲线填充图、直方折线填充图的线条宽度
             : Float? = null
     private var borderWidth: Float? = null
+    private var borderColor: String? = null
     private var borderRadius: Float? = null
     private var color: Any? = null
     private var fillColor: Any? = null
@@ -63,13 +64,16 @@ class AASeriesElement {
     private var marker: AAMarker? = null
     private var step: Any? = null
     private var states: Any? = null
+    private var showInLegend //Whether to display this particular series or series type in the legend. The default value is true for standalone series, false for linked series. Deafualt value：true
+            : Boolean? = null
+    private var visible //Set the initial visibility of the series. Deafualt value：true
+            : Boolean? = null
     private var colorByPoint: Boolean? = null
     private var zIndex: Int? = null
     private var zones: Array<Any>? = null
     private var shadow: AAShadow? = null
     private var stack: String? = null
     private var tooltip: AATooltip? = null
-    private var showInLegend: Boolean? = null
     private var enableMouseTracking: Boolean? = null
     private var reversed: Boolean? = null
     private var keys: Array<String>? = null
@@ -116,6 +120,11 @@ class AASeriesElement {
 
     fun borderWidth(prop: Float?): AASeriesElement {
         borderWidth = prop
+        return this
+    }
+
+    fun borderColor(prop: String): AASeriesElement {
+        borderColor = prop
         return this
     }
 
@@ -191,6 +200,16 @@ class AASeriesElement {
 
     fun states(prop: Any?): AASeriesElement {
         states = prop
+        return this
+    }
+
+    fun showInLegend(prop: Boolean): AASeriesElement {
+        showInLegend = prop
+        return this
+    }
+
+    fun visible(prop: Boolean): AASeriesElement {
+        visible = prop
         return this
     }
 

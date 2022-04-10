@@ -54,6 +54,8 @@ class AATooltip {
     private var shared: Boolean? = null
     private var crosshairs: Boolean? = null
     private var valueSuffix: String? = null
+    private var outside: Boolean? = null
+
 
     fun backgroundColor(prop: String): AATooltip {
         backgroundColor = prop
@@ -129,6 +131,11 @@ class AATooltip {
 
     fun valueSuffix(prop: String?): AATooltip {
         valueSuffix = prop
+        return this
+    }
+
+    fun outside(prop: Boolean?): AATooltip {
+        outside = prop
         return this
     }
 
