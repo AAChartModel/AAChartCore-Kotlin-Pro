@@ -4,7 +4,7 @@ class AAColorAxis {
     var min: Float? = null
     var minColor: String? = null
     var maxColor: String? = null
-    var dataClasses: Array<AADataClasses>? = null
+    var dataClassElements: Array<AADataClassesElement>? = null
 
     fun min(prop: Float?): AAColorAxis {
         min = prop
@@ -21,8 +21,8 @@ class AAColorAxis {
         return this
     }
 
-    fun dataClasses(prop: Array<AADataClasses>): AAColorAxis {
-        dataClasses = prop
+    fun dataClasses(prop: Array<AADataClassesElement>): AAColorAxis {
+        dataClassElements = prop
         return this
     }
 }

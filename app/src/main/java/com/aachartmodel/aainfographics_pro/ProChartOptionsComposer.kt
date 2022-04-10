@@ -7,7 +7,6 @@ import com.aachartmodel.aainfographics_pro.datasource.AAOptionsSeries
 import com.github.aachartmodel.aainfographics.aachartcreator.*
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.*
 import com.github.aachartmodel.aainfographics.aatools.AAColor
-import java.util.*
 
 public class ProChartOptionsComposer {
     companion object {
@@ -73,7 +72,7 @@ public class ProChartOptionsComposer {
                             AASeriesElement()
                                     .type(AAChartType.Treemap)
                                     .levels(arrayOf(
-                                            AALevels()
+                                            AALevelsElement()
                                                     .level(1)
                                                     .layoutAlgorithm("sliceAndDice")
                                                     .dataLabels(AADataLabels()
@@ -141,16 +140,16 @@ public class ProChartOptionsComposer {
                             .type(AAChartType.Sunburst)
                             .allowDrillToNode(true)
                             .levels(arrayOf(
-                                    AALevels()
+                                    AALevelsElement()
                                             .level(2)
                                             .colorByPoint(true)
                                             .layoutAlgorithm("sliceAndDice"),
-                                    AALevels()
+                                    AALevelsElement()
                                             .level(3)
                                             .colorVariation(AAColorVariation()
                                                     .key("brightness")
                                                     .to(-0.5f)),
-                                    AALevels()
+                                    AALevelsElement()
                                             .level(4)
                                             .colorVariation(AAColorVariation()
                                                     .key("brightness")
@@ -443,22 +442,22 @@ public class ProChartOptionsComposer {
                             .visible(false))
                     .colorAxis(AAColorAxis()
                             .dataClasses(arrayOf(
-                                    AADataClasses()
+                                    AADataClassesElement()
                                             .from(0f)
                                             .to(1000000f)
                                             .color("#F9EDB3")
                                             .name("< 1M"),
-                                    AADataClasses()
+                                    AADataClassesElement()
                                             .from(1000000f)
                                             .to(5000000f)
                                             .color("#FFC428")
                                             .name("1M - 5M"),
-                                    AADataClasses()
+                                    AADataClassesElement()
                                             .from(5000000f)
                                             .to(20000000f)
                                             .color("#F9EDB3")
                                             .name("5M - 20M"),
-                                    AADataClasses()
+                                    AADataClassesElement()
                                             .from(20000000f)
                                             .color("#FF2371")
                                             .name("> 20M"))))
@@ -512,7 +511,7 @@ public class ProChartOptionsComposer {
                             AASeriesElement()
                                     .type(AAChartType.Treemap)
                                     .levels(arrayOf(
-                                            AALevels()
+                                            AALevelsElement()
                                                     .level(1)
                                                     .dataLabels(AADataLabels()
                                                             .enabled(true))
@@ -699,6 +698,107 @@ public class ProChartOptionsComposer {
                             AASeriesElement()
                                     .data(AAOptionsData.eulerData)))
         }
+
+//            fun organizationChart(): AAOptions? {
+//                    return AAOptions()
+//                            .chart(AAChart() //            .height(600)
+//                                    .inverted(true))
+//                            .title(AATitle()
+//                                    .text("Highsoft 公司组织结构"))
+//                            .series(arrayOf(
+//                                    AASeriesElement()
+//                                                    .type(AAChartType.Organization)
+//                                                    .name("Highsoft")
+//                                                    .keys(arrayOf("from", "to"))
+//                                                    .data(AAOptionsData.organizationData)
+//                                                    .levels(
+//                                                            arrayOf(
+//                                                                    AALevelsElement()
+//                                                                            .level(0)
+//                                                                            .color("silver")
+//                                                                            .dataLabels(
+//                                                                                    AADataLabels()
+//                                                                                            .color(AAColor.Black)
+//                                                                            )
+//                                                                            .height(25f),
+//                                                                    AALevelsElement()
+//                                                                            .level(1)
+//                                                                            .color("silver")
+//                                                                            .dataLabels(
+//                                                                                    AADataLabels()
+//                                                                                            .color(AAColor.Black)
+//                                                                            )
+//                                                                            .height(25f),
+//                                                                    AALevelsElement()
+//                                                                            .level(2)
+//                                                                            .color("#980104"),
+//                                                                    AALevelsElement()
+//                                                                            .level(4)
+//                                                                            .color("#359154")
+//                                                            )
+//                                                    )
+//                                                    .nodes(AAOptionsData.organizationNodesData)
+//                                                    .colorByPoint(false)
+//                                                    .color("#007ad0")
+//                                                    .dataLabels(
+//                                                            AADataLabels()
+//                                                                    .color(AAColor.White)
+//                                                    )
+//                                                    .borderColor(AAColor.White)
+//                                                    .nodeWidth(65f)
+//                                    )
+//                            )
+//                            .tooltip(
+//                                    AATooltip() //                    .outside(true)
+//                            )
+//            }
+
+            //https://www.highcharts.com/docs/chart-and-series-types/arc-diagram
+//            fun arcdiagramChart1(): AAOptions? {
+//                    return AAOptions()
+//                            .colors(
+//                                    arrayOf<String>(
+//                                            "#293462",
+//                                            "#a64942",
+//                                            "#fe5f55",
+//                                            "#fff1c1",
+//                                            "#5bd1d7",
+//                                            "#ff502f",
+//                                            "#004d61",
+//                                            "#ff8a5c",
+//                                            "#fff591",
+//                                            "#f5587b",
+//                                            "#fad3cf",
+//                                            "#a696c8",
+//                                            "#5BE7C4",
+//                                            "#266A2E",
+//                                            "#593E1A"
+//                                    )
+//                            )
+//                            .title(
+//                                    AATitle()
+//                                            .text("Main train connections in Europe")
+//                            )
+//                            .series(
+//                                    arrayOf<AASeriesElement>(
+//                                            AASeriesElement()
+//                                                    .keys(arrayOf("from", "to", "weight"))
+//                                                    .type(AAChartType.Arcdiagram)
+//                                                    .name("Train connections")
+//                                                    .linkWeight(1)
+//                                                    .centeredLinks(true)
+//                                                    .dataLabels(
+//                                                            AADataLabels()
+//                                                                    .rotation(90f)
+//                                                                    .y(30f)
+//                                                                    .align(AAChartAlignType.Left)
+//                                                                    .color(AAColor.Black)
+//                                                    )
+//                                                    .offset("65%")
+//                                                    .data(AAOptionsData.arcdiagram1Data)
+//                                    )
+//                            )
+//            }
 
     }
 }

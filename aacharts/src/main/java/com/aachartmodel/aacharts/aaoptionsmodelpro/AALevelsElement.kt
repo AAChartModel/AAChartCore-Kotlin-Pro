@@ -3,7 +3,7 @@ package com.aachartmodel.aacharts.aaoptionsmodelpro
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AADataLabels
 
 
-class AALevels {
+class AALevelsElement {
     var borderColor: String? = null
     var borderDashStyle: String? = null
     var borderWidth: Float? = null
@@ -15,52 +15,52 @@ class AALevels {
     var level: Any? = null
     var colorVariation: AAColorVariation? = null
 
-    fun borderColor(prop: String?): AALevels {
+    fun borderColor(prop: String?): AALevelsElement {
         borderColor = prop
         return this
     }
 
-    fun borderDashStyle(prop: String?): AALevels {
+    fun borderDashStyle(prop: String?): AALevelsElement {
         borderDashStyle = prop
         return this
     }
 
-    fun borderWidth(prop: Float?): AALevels {
+    fun borderWidth(prop: Float?): AALevelsElement {
         borderWidth = prop
         return this
     }
 
-    fun color(prop: String?): AALevels {
+    fun color(prop: String?): AALevelsElement {
         color = prop
         return this
     }
 
-    fun colorByPoint(prop: Boolean?): AALevels {
+    fun colorByPoint(prop: Boolean?): AALevelsElement {
         colorByPoint = prop
         return this
     }
 
-    fun dataLabels(prop: AADataLabels?): AALevels {
+    fun dataLabels(prop: AADataLabels?): AALevelsElement {
         dataLabels = prop
         return this
     }
 
-    fun layoutAlgorithm(prop: String?): AALevels {
+    fun layoutAlgorithm(prop: String?): AALevelsElement {
         layoutAlgorithm = prop
         return this
     }
 
-    fun layoutStartingDirection(prop: String?): AALevels {
+    fun layoutStartingDirection(prop: String?): AALevelsElement {
         layoutStartingDirection = prop
         return this
     }
 
-    fun level(prop: Any?): AALevels {
+    fun level(prop: Any?): AALevelsElement {
         level = prop
         return this
     }
 
-    fun colorVariation(prop: AAColorVariation?): AALevels {
+    fun colorVariation(prop: AAColorVariation?): AALevelsElement {
         colorVariation = prop
         return this
     }

@@ -27,7 +27,7 @@
  */
 package com.github.aachartmodel.aainfographics.aachartcreator
 
-import com.aachartmodel.aacharts.aaoptionsmodelpro.AALevels
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AALevelsElement
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AADataLabels
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AAMarker
 import com.github.aachartmodel.aainfographics.aaoptionsmodel.AATooltip
@@ -73,10 +73,21 @@ class AASeriesElement {
     private var enableMouseTracking: Boolean? = null
     private var reversed: Boolean? = null
     private var keys: Array<String>? = null
-    private var levels: Array<AALevels>? = null
+    private var levels: Array<AALevelsElement>? = null
     private var allowDrillToNode: Boolean? = null
     private var xAxis: Int? = null
     private var baseSeries: Int? = null
+
+    private var nodes: Array<Any>? = null
+    private var nodeWidth: Float? = null
+    private var cursor: String? = null
+    private var offset //The offset of an arc diagram nodes column in relation to the plotArea. The offset equal to 50% places nodes in the center of a chart. By default the series is placed so that the biggest node is touching the bottom border of the plotArea. Defaults to '100%'.
+            : String? = null
+    private var linkWeight //The global link weight. If not set, width is calculated per link, depending on the weight value. Defaults to undefined.
+            : Int? = null
+    private var centeredLinks //The option to center links rather than position them one after another. Defaults to false.
+            : Boolean? = null
+
 
     fun type(prop: AAChartType?): AASeriesElement {
         type = prop?.value
@@ -233,7 +244,7 @@ class AASeriesElement {
         return this
     }
 
-    fun levels(prop: Array<AALevels>): AASeriesElement {
+    fun levels(prop: Array<AALevelsElement>): AASeriesElement {
         levels = prop
         return this
     }
@@ -250,6 +261,36 @@ class AASeriesElement {
 
     fun baseSeries(prop: Int?): AASeriesElement {
         baseSeries = prop
+        return this
+    }
+
+    fun nodes(prop: Array<Any>?): AASeriesElement {
+        nodes = prop
+        return this
+    }
+
+    fun nodeWidth(prop: Float?): AASeriesElement {
+        nodeWidth = prop
+        return this
+    }
+
+    fun cursor(prop: String?): AASeriesElement {
+        cursor = prop
+        return this
+    }
+
+    fun offset(prop: String?): AASeriesElement {
+        offset = prop
+        return this
+    }
+
+    fun linkWeight(prop: Int?): AASeriesElement {
+        linkWeight = prop
+        return this
+    }
+
+    fun centeredLinks(prop: Boolean?): AASeriesElement {
+        centeredLinks = prop
         return this
     }
 }
