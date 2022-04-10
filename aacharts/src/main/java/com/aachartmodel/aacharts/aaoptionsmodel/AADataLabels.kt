@@ -8,6 +8,7 @@
  */
 package com.github.aachartmodel.aainfographics.aaoptionsmodel
 
+import com.aachartmodel.aacharts.aaoptionsmodelpro.AATextPath
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartAlignType
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartVerticalAlignType
 
@@ -33,8 +34,14 @@ class AADataLabels {
     var crop: Boolean? = null
     var overflow: String? = null
     var softConnector: Boolean? = null
-    var textPath: Any? = null
     var filter: Any? = null
+    var textPath: AATextPath? = null
+    var linkTextPath: AATextPath? = null
+    var padding //When either the borderWidth or the backgroundColor is set, this is the padding within the box. Defaults to 5.
+            : Float? = null
+    var nodeFormat //The format string specifying what to show for nodes in the sankey diagram. By default the nodeFormatter returns {point.name}. Defaults to undefined.
+            : String? = null
+
 
     fun enabled(prop: Boolean?): AADataLabels {
         enabled = prop
@@ -142,13 +149,28 @@ class AADataLabels {
         return this
     }
 
-    fun textPath(prop: Any?): AADataLabels {
+    fun filter(prop: Any?): AADataLabels {
+        filter = prop
+        return this
+    }
+
+    fun textPath(prop: AATextPath): AADataLabels {
         textPath = prop
         return this
     }
 
-    fun filter(prop: Any?): AADataLabels {
-        filter = prop
+    fun linkTextPath(prop: AATextPath): AADataLabels {
+        linkTextPath = prop
+        return this
+    }
+
+    fun padding(prop: Float): AADataLabels {
+        padding = prop
+        return this
+    }
+
+    fun nodeFormat(prop: String): AADataLabels {
+        nodeFormat = prop
         return this
     }
 }
