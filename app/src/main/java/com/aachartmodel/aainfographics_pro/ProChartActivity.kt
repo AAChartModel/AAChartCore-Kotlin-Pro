@@ -46,6 +46,12 @@ class ProChartActivity : AppCompatActivity() {
             23 -> return ProChartOptionsComposer.networkgraphChart()
             24 -> return ProChartOptionsComposer.wordcloudChart()
             25 -> return ProChartOptionsComposer.eulerChart()
+            26 -> return ProChartOptionsComposer.organizationChart();
+            27 -> return ProChartOptionsComposer.arcdiagramChart1();
+            28 -> return ProChartOptionsComposer.arcdiagramChart2();
+            29 -> return ProChartOptionsComposer.arcdiagramChart3();
+            30 -> return ProChartOptionsComposer.flameChart();
+            31 -> return ProChartOptionsComposer.packedbubbleSpiralChart();
         }
         return ProChartOptionsComposer.sankeyChart()
     }

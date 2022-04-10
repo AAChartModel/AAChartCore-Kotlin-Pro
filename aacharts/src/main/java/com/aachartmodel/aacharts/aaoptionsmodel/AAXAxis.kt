@@ -23,6 +23,10 @@ class AAXAxis {
     var lineColor: String? = null //x轴轴线线颜色
     var max: Float? = null //x轴最大值
     var min: Float? = null//x轴最小值（设置为0就不会有负数）
+    var maxPadding //Padding of the max value relative to the length of the axis. A padding of 0.05 will make a 100px axis 5px longer. This is useful when you don't want the highest data value to appear on the edge of the plot area. When the axis' max option is set or a max extreme is set using axis.setExtremes(), the maxPadding will be ignored. Defaults to 0.01.
+            : Float? = null
+    var minPadding //Padding of the min value relative to the length of the axis. A padding of 0.05 will make a 100px axis 5px longer. This is useful when you don't want the lowest data value to appear on the edge of the plot area.  Defaults to 0.05
+            : Float? = null
     var tickColor: String? = null //x轴轴线下方刻度线颜色
     var gridLineWidth: Float? = null //x轴网格线宽度
     var gridLineColor: String? = null //x轴网格线颜色
@@ -32,6 +36,8 @@ class AAXAxis {
     var visible: Boolean? = null //用于设置 x 轴以及 x 轴文字是否显示
     var startOnTick: Boolean? =
         null //Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. 默认是：false.
+    var endOnTick // Whether to force the axis to end on a tick. Use this option with the minPadding option to control the axis end. The default is false.
+            : Boolean? = null
     var tickInterval: Int? = null//x轴刻度点间隔数(设置每隔几个点显示一个 X轴的内容:
     var crosshair: AACrosshair? = null //准星线样式设置
     var tickmarkPlacement: String? =
@@ -102,6 +108,16 @@ class AAXAxis {
         return this
     }
 
+    fun maxPadding(prop: Float): AAXAxis {
+        maxPadding = prop
+        return this
+    }
+
+    fun minPadding(prop: Float): AAXAxis {
+        minPadding = prop
+        return this
+    }
+
     fun tickColor(prop: String): AAXAxis {
         tickColor = prop
         return this
@@ -139,6 +155,11 @@ class AAXAxis {
 
     fun startOnTick(prop: Boolean?): AAXAxis {
         startOnTick = prop
+        return this
+    }
+
+    fun endOnTick(prop: Boolean): AAXAxis {
+        endOnTick = prop
         return this
     }
 

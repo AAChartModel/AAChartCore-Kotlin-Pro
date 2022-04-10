@@ -10,6 +10,8 @@ class AAPackedbubble {
     var zMax: Float? = null
     var layoutAlgorithm: AALayoutAlgorithm? = null
     var dataLabels: AADataLabels? = null
+    var useSimulation: Boolean? = null
+
 
     fun minSize(prop: String?): AAPackedbubble {
         minSize = prop
@@ -38,6 +40,11 @@ class AAPackedbubble {
 
     fun dataLabels(prop: AADataLabels?): AAPackedbubble {
         dataLabels = prop
+        return this
+    }
+
+    fun useSimulation(prop: Boolean): AAPackedbubble {
+        useSimulation = prop
         return this
     }
 }
