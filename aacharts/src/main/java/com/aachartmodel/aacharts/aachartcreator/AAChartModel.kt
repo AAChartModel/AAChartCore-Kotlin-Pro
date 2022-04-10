@@ -113,6 +113,10 @@ enum class AAChartType(val value: String) {
     Windbarb("windbarb"),
     Networkgraph("networkgraph"),
     Wordcloud("wordcloud"),
+
+    Organization("organization"),
+    Arcdiagram("arcdiagram"),
+    Flame("flame"),
 }
 
 enum class AAChartZoomType(val value: String) {
