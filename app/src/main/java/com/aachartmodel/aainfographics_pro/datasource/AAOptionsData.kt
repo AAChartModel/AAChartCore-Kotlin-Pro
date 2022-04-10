@@ -67,6 +67,27 @@ object AAOptionsData {
     val eulerData
             = getLocalData("eulerData")
 
+    var organizationData
+            = getLocalData("organizationData")
+
+    var organizationNodesData
+            = getLocalData("organizationNodesData")
+
+    var arcdiagram1Data
+            = getLocalData("arcdiagram1Data")
+
+    var arcdiagram2Data
+            = getLocalData("arcdiagram2Data")
+
+    var arcdiagram3Data
+            = getLocalData("arcdiagram3Data")
+
+    var flameData
+            = getLocalData("flameData")
+
+    var sunburst2Data
+            = getLocalData("sunburst2Data")
+
     val xrangeData: Array<Any>
         get() {
             fun singleGroupCategoryDataElementArray(y: Int): Array<Any> {
