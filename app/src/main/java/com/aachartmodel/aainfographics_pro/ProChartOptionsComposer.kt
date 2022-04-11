@@ -58,8 +58,7 @@ public class ProChartOptionsComposer {
                                     .innerSize("20%")
                                     .dataLabels(AADataLabels()
                                             .enabled(false))
-                                    .data(AAOptionsData.variablepieData)
-                    ))
+                                    .data(AAOptionsData.variablepieData)))
         }
 
 
@@ -82,8 +81,7 @@ public class ProChartOptionsComposer {
                                                             .verticalAlign(AAChartVerticalAlignType.Top)
                                                             .style(AAStyle()
                                                                     .fontSize(15f)
-                                                                    .fontWeight(AAChartFontWeightType.Bold)))
-                                    ))
+                                                                    .fontWeight(AAChartFontWeightType.Bold)))))
                                     .data(AAOptionsData.treemapWithLevelsData)))
         }
 
@@ -112,8 +110,8 @@ public class ProChartOptionsComposer {
                             .dataLabels(AADataLabels()
                                     .enabled(true)
                                     .format("€{point.y:.0f}"))
-                            .colorByPoint(true)
-            )
+                            .colorByPoint(true))
+
             return AAOptions()
                     .chart(aaChart)
                     .title(aaTitle)
@@ -154,10 +152,9 @@ public class ProChartOptionsComposer {
                                             .level(4)
                                             .colorVariation(AAColorVariation()
                                                     .key("brightness")
-                                                    .to(0.5f))
-                            ))
-                            .data(AAOptionsData.sunburstData)
-            )
+                                                    .to(0.5f))))
+                            .data(AAOptionsData.sunburstData))
+
             return AAOptions()
                     .chart(aaChart)
                     .title(aaTitle)
@@ -186,8 +183,7 @@ public class ProChartOptionsComposer {
                                             .distance(10f)
                                             .textPath(AATextPath()
                                                     .enabled(true)
-                                                    .attributes(mapOf("dy" to 5))))
-                    ))
+                                                    .attributes(mapOf("dy" to 5))))))
         }
 
 
@@ -332,8 +328,7 @@ public class ProChartOptionsComposer {
             val seriesElementArr = arrayOf<Any>(
                     AASeriesElement()
                             .name("各国预期寿命变化")
-                            .data(AAOptionsData.dumbbellData)
-            )
+                            .data(AAOptionsData.dumbbellData))
             return AAOptions()
                     .chart(aaChart)
                     .title(aaTitle)
@@ -366,8 +361,7 @@ public class ProChartOptionsComposer {
             val seriesElementArr = arrayOf<Any>(
                     AASeriesElement()
                             .name("Population")
-                            .data(AAOptionsData.lollipopData)
-            )
+                            .data(AAOptionsData.lollipopData))
             return AAOptions()
                     .chart(aaChart)
                     .title(aaTitle)
@@ -720,22 +714,19 @@ public class ProChartOptionsComposer {
                                                         .color("silver")
                                                         .dataLabels(AADataLabels()
                                                                 .color(AAColor.Black))
-                                                        .height(25f)
-                                                ,
+                                                        .height(25f),
                                                 AALevelsElement()
                                                         .level(1)
                                                         .color("silver")
                                                         .dataLabels(AADataLabels()
                                                                 .color(AAColor.Black))
-                                                        .height(25f)
-                                                ,
+                                                        .height(25f),
                                                 AALevelsElement()
                                                         .level(2)
                                                         .color("#980104"),
                                                 AALevelsElement()
                                                         .level(4)
-                                                        .color("#359154")
-                                        ))
+                                                        .color("#359154")))
                                         .nodes(AAOptionsData.organizationNodesData)
                                         .colorByPoint(false)
                                         .color("#007ad0")
@@ -744,8 +735,7 @@ public class ProChartOptionsComposer {
                                                     .borderColor(AAColor.White)
                                         .nodeWidth(65f)))
                         .tooltip(AATooltip()
-                                .outside(true)
-                        )
+                                .outside(true))
         }
 
         //https://www.highcharts.com/docs/chart-and-series-types/arc-diagram
@@ -807,14 +797,13 @@ public class ProChartOptionsComposer {
                         .series(arrayOf(AASeriesElement()
                                 .keys(arrayOf("from", "to", "weight")) //                .centerPos("50%")
                                 .type(AAChartType.Arcdiagram)
-                                .dataLabels(
-                                        AADataLabels()
-                                                .align(AAChartAlignType.Right)
-                                                .x(-20f)
-                                                .y(-2f)
-                                                .color("#333333")
-                                                .overflow("allow")
-                                                .padding(0f))
+                                .dataLabels(AADataLabels()
+                                        .align(AAChartAlignType.Right)
+                                        .x(-20f)
+                                        .y(-2f)
+                                        .color("#333333")
+                                        .overflow("allow")
+                                        .padding(0f))
                                 .offset("60%")
                                 .data(AAOptionsData.arcdiagram3Data)))
         }
