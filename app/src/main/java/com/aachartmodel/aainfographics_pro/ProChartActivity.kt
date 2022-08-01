@@ -20,16 +20,16 @@ class ProChartActivity : AppCompatActivity() {
 
     private fun chartConfigurationWithSelectedIndex(selectedIndex: Int): AAOptions {
         when (selectedIndex) {
-            0 -> return ProChartOptionsComposer.sankeyChart()
-            1 -> return ProChartOptionsComposer.variablepieChart()
-            2 -> return ProChartOptionsComposer.treemapWithLevelsDataChart()
-            3 -> return ProChartOptionsComposer.variwideChart()
-            4 -> return ProChartOptionsComposer.sunburstChart()
-            5 -> return ProChartOptionsComposer.dependencywheelChart()
-            6 -> return ProChartOptionsComposer.heatmapChart()
-            7 -> return ProChartOptionsComposer.packedbubbleChart()
-            8 -> return ProChartOptionsComposer.packedbubbleSplitChart()
-            9 -> return ProChartOptionsComposer.vennChart()
+             0 -> return ProChartOptionsComposer.sankeyChart()
+             1 -> return ProChartOptionsComposer.variablepieChart()
+             2 -> return ProChartOptionsComposer.treemapWithLevelsDataChart()
+             3 -> return ProChartOptionsComposer.variwideChart()
+             4 -> return ProChartOptionsComposer.sunburstChart()
+             5 -> return ProChartOptionsComposer.dependencywheelChart()
+             6 -> return ProChartOptionsComposer.heatmapChart()
+             7 -> return ProChartOptionsComposer.packedbubbleChart()
+             8 -> return ProChartOptionsComposer.packedbubbleSplitChart()
+             9 -> return ProChartOptionsComposer.vennChart()
             10 -> return ProChartOptionsComposer.dumbbellChart()
             11 -> return ProChartOptionsComposer.lollipopChart()
             12 -> return ProChartOptionsComposer.streamgraphChart()
@@ -46,12 +46,14 @@ class ProChartActivity : AppCompatActivity() {
             23 -> return ProChartOptionsComposer.networkgraphChart()
             24 -> return ProChartOptionsComposer.wordcloudChart()
             25 -> return ProChartOptionsComposer.eulerChart()
-            26 -> return ProChartOptionsComposer.organizationChart();
-            27 -> return ProChartOptionsComposer.arcdiagramChart1();
-            28 -> return ProChartOptionsComposer.arcdiagramChart2();
-            29 -> return ProChartOptionsComposer.arcdiagramChart3();
-            30 -> return ProChartOptionsComposer.flameChart();
-            31 -> return ProChartOptionsComposer.packedbubbleSpiralChart();
+            26 -> return ProChartOptionsComposer.organizationChart()
+            27 -> return ProChartOptionsComposer.arcdiagramChart1()
+            28 -> return ProChartOptionsComposer.arcdiagramChart2()
+            29 -> return ProChartOptionsComposer.arcdiagramChart3()
+            30 -> return ProChartOptionsComposer.flameChart()
+            31 -> return ProChartOptionsComposer.packedbubbleSpiralChart()
+            32 -> return ProChartOptionsComposer.itemChart2()
+            33 -> return ProChartOptionsComposer.itemChart3()
         }
         return ProChartOptionsComposer.sankeyChart()
     }
