@@ -315,34 +315,34 @@ class AASeriesElement {
 }
 
 
-class AADataElement {
-    private var name: String? = null
-    private var y: Float? = null
-    private var color: Any? = null
-    private var dataLabels: AADataLabels? = null
-    private var marker: AAMarker? = null
+open class AADataElement {
+    var name: String? = null
+    var y: Float? = null
+    var color: Any? = null
+    var dataLabels: AADataLabels? = null
+    var marker: AAMarker? = null
 
-    fun name(prop: String): AADataElement {
+    open fun name(prop: String?): AADataElement {
         name = prop
         return this
     }
 
-    fun y(prop: Float?): AADataElement {
+    open fun y(prop: Float?): AADataElement {
         y = prop
         return this
     }
 
-    fun color(prop: Any): AADataElement {
+    open fun color(prop: Any?): AADataElement {
         color = prop
         return this
     }
 
-    fun dataLabels(prop: AADataLabels): AADataElement {
+    open fun dataLabels(prop: AADataLabels?): AADataElement {
         dataLabels = prop
         return this
     }
 
-    fun marker(prop: AAMarker): AADataElement {
+    open fun marker(prop: AAMarker?): AADataElement {
         marker = prop
         return this
     }
