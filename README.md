@@ -1,1 +1,1 @@
-# AAChartCore-Kotlin-Pro-Beta
+# AAChartCore-Kotlin-Pro (AAInfographics-Pro)
